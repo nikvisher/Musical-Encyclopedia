@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instrument Categories</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Категории инструментов:</h1>
+    <ul>
+        {% for category in categories %}
+            <li>
+                <a href="{% url 'instrument_list' category.id %}">
+                    {% if category.image %}
+                        <img src="{{ category.image.url }}" alt="{{ category.category_title }}">
+                    {% endif %}
+                    {{ category.category_title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="javascript:history.back()" class="back-button">Назад</a>
+    <a href="{% url 'index' %}" class="back-button">На главную</a>
+</body>
+</html>

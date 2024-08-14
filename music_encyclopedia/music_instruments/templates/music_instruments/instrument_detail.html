@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instrument Detail</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>{{ instrument.title }}</h1>
+    {% if instrument.image %}
+        <img src="{{ instrument.image.url }}" alt="{{ instrument.title }}">
+    {% endif %}
+    <p class="description">Описание: {{ instrument.description }}</p>
+    <a href="javascript:history.back()" class="back-button">Назад</a>
+    <a href="{% url 'index' %}" class="back-button">На главную</a>
+</body>
+</html>

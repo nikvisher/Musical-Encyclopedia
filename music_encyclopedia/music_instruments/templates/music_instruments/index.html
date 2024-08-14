@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Encyclopedia</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'images/left_image.png' %}" alt="Left Image" class="side-image side-image-left">
+        <img src="{% static 'images/right_image.png' %}" alt="Right Image" class="side-image side-image-right">
+        <h1>Добро пожаловать в музыкальную энциклопедию<br>народов мира</h1>
+        <h2>Выберите страну:</h2>
+        <div class="flag-buttons">
+            {% for country in countries_list %}
+                <a href="{% url 'peoples' country.id %}" class="flag-button">
+                    <img src="{{ country.flag_image.url }}" alt="{{ country.country_name }}">
+                    {{ country.country_name }}
+                </a>
+            {% endfor %}
+        </div>
+        <img src="{% static 'images/instruments.png' %}" alt="Instruments Image" class="instruments-image">
+    </div>
+    <footer>
+        <p>&copy; 2024 Music Encyclopedia. All rights reserved.</p>
+    </footer>
+</body>
+</html>

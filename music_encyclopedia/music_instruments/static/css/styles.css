@@ -1,0 +1,172 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #333333; /* Графитовый цвет фона */
+    color: #ff0; /* Желтый цвет текста */
+    margin: 0; /* Убираем отступы по краям страницы */
+    padding: 20px; /* Устанавливаем внутренние отступы */
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px; /* Увеличиваем максимальную ширину контейнера до 1000px */
+    margin: 0 auto; /* Центрируем контейнер */
+    display: flex; /* Используем Flexbox для расположения элементов */
+    flex-direction: column; /* Размещаем элементы контейнера по вертикали */
+    align-items: center; /* Выравниваем элементы по центру по горизонтали */
+}
+
+/* Оформление кнопок флагов*/
+.flag-button {
+    display: inline-block; /* Устанавливаем блочный элемент в строку */
+    margin: 10px;
+    border: none;
+    border-radius: 5px; /* Добавляем скругление углов, чтобы соответствовать стилю кнопки */
+    overflow: hidden; /* Обрезаем содержимое, выходящее за границы кнопки */
+    transition: transform 0.3s ease;
+    color: #ff0; /* Желтый цвет текста */
+    font-weight: bold; /* Делаем текст жирным */
+    text-transform: uppercase; /* Преобразуем текст в верхний регистр */
+    padding: 10px 20px; /* Добавляем внутренние отступы */
+    text-align: center; /* Центрируем текст в кнопке */
+}
+
+.flag-button:hover {
+    transform: scale(1.05); /* Увеличиваем кнопку при наведении */
+    background-color: #C0C0C0; /* Изменяем цвет кнопки на серебряный при наведении */
+}
+
+.flag-button img {
+    width: auto;
+    height: auto;
+}
+/* Оформление заголовков*/
+h1, h2 {
+    color: #ff0; /* Желтый цвет текста */
+    margin-bottom: 20px; /* Добавим небольшой отступ между заголовками и кнопками */
+    text-align: center;
+}
+
+h1 {
+    text-shadow: 0 0 5px #ff7f00, 0 0 10px #ff7f00, 0 0 15px #ff7f00, 0 0 20px #ff7f00, 0 0 30px #ff7f00, 0 0 40px #ff7f00, 0 0 50px #ff7f00; /* эффект неонового свечения */
+    white-space: nowrap; /* Предотвращаем перенос текста */
+}
+
+/* Оформление элементов для списков */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Центрируем элементы списка */
+    display: flex; /* Используем flexbox */
+    flex-direction: column; /* Размещаем элементы списка в столбике */
+    align-items: center; /* Выравниваем по центру по горизонтали */
+    padding-left: 0; /* Убираем отступ слева у списка */
+}
+
+ul li {
+    display: inline-block; /* Размещаем элементы списка в одной строке */
+    margin-bottom: 10px;/* Добавим небольшой отступ между элементами списка */
+    width: max-content; /* Устанавливаем ширину элемента в зависимости от содержимого */
+}
+
+ul li a {
+    display: inline-block;
+    padding: 10px 20px; /* Добавляем отступы вокруг текста */
+    border-radius: 5px; /* Добавляем скругление углов */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+}
+
+ul li a:hover {
+    background-color: #ffffff; /* Белый цвет фона при наведении */
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff; /* Добавляем неоновую подсветку белым цветом */
+    animation: pulse-white 0.5s infinite alternate; /* Мерцание с белым цветом */
+}
+/* пульсация эффект для всех списков*/
+@keyframes pulse-white {
+    from {
+        box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff; /* Начальная интенсивность подсветки белым цветом */
+    }
+    to {
+        box-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 60px #ffffff, 0 0 80px #ffffff; /* Конечная интенсивность подсветки белым цветом */
+    }
+}
+
+ul li:hover a:hover {
+    background-color: #a0a0a0; /* Дополнительное изменение цвета фона при наведении на ссылку */
+}
+
+/* Оформление текста в списках */
+a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px; /* Пример размера шрифта */
+}
+
+/* Изменяем цвет ссылки на белый при наведении */
+a:hover {
+    color: #fff;
+}
+
+/*Оформление кнопок управления */
+.back-button {
+    display: inline-block;/* Устанавливаем блочный элемент в строку */
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff0; /* Желтый цвет фона */
+    color: #000; /* Черный цвет текста */
+    text-decoration: none; /* Убираем подчеркивание текста */
+    border-radius: 5px; /* Скругляем углы кнопки */
+}
+
+.back-button:hover {
+    background-color: #ff8c00; /* Темно-оранжевый цвет */
+    box-shadow: 0 0 10px #ff8c00, 0 0 20px #ff8c00, 0 0 40px #ff8c00, 0 0 80px #ff8c00; /* Добавляем неоновую подсветку */
+    animation: pulse 0.5s infinite alternate; /* Мерцание */
+}
+/* Последовательность шагов анимации*/
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 10px #ff8c00, 0 0 20px #ff8c00, 0 0 30px #ff8c00, 0 0 40px #ff8c00; /* Начальная интенсивность подсветки */
+    }
+    to {
+        box-shadow: 0 0 20px #ff8c00, 0 0 40px #ff8c00, 0 0 60px #ff8c00, 0 0 80px #ff8c00; /* Конечная интенсивность подсветки */
+    }
+}
+
+/* Описание инструмента */
+.description {
+    color: white;
+    max-width: 800px;
+    margin: 0 auto; /* Центрируем описание по горизонтали */
+    padding: 10px; /* Добавляем внутренние отступы */
+    text-align: justify; /* Выравниваем текст по ширине */
+    line-height: 1.3; /* Устанавливаем межстрочный интервал */
+    white-space: pre-line; /* Сохраняем переносы строк */
+    font-size: 16px;
+}
+
+/* Основное изображение на главной странице*/
+.instruments-image {
+    max-width: 85%;
+    height: auto;
+    filter: brightness(110%);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* подсветка */
+}
+
+/* Боковые изображения*/
+.side-image {
+    position: fixed; /* Фиксируем позицию изображения */
+    height: auto%;
+    width: auto%;
+    border-radius: 10px; /* Скругляем углы изображения */
+}
+
+.side-image-left {
+    left: 0;
+    top: 0%;
+}
+
+.side-image-right {
+    right: 0;
+    top: 23%;
+}
